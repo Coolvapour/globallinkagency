@@ -157,7 +157,7 @@ function ServicesPreview() {
 }
 
 function Destinations() {
-  const dests = ["Canada", "United Kingdom", "USA", "Australia", "Germany", "Ireland", "Dubai", "Malaysia"];
+  const dests = ["Canada", "United Kingdom", "USA", "Australia", "Germany", "Ireland", "Dubai", "Malaysia", "Malta", "Qatar"];
   return (
     <section className="bg-navy py-20 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
