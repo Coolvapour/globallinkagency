@@ -1,0 +1,126 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
+
+export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      { title: "Contact Us — Global Link Migration & Education Agency" },
+      { name: "description", content: "Book a free consultation with our migration and education advisors. We're here to guide your family from sacrifice to success." },
+      { property: "og:title", content: "Contact Global Link Migration & Education" },
+      { property: "og:description", content: "Reach our team and start your global journey today." },
+    ],
+  }),
+  component: ContactPage,
+});
+
+function ContactPage() {
+  const [submitting, setSubmitting] = useState(false);
+
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      (e.target as HTMLFormElement).reset();
+      toast.success("Thank you! We'll be in touch within 24 hours.");
+    }, 700);
+  }
+
+  const details = [
+    { icon: Phone, label: "Phone", value: "[Phone Number]" },
+    { icon: Mail, label: "Email", value: "[Email Address]" },
+    { icon: MapPin, label: "Office", value: "[Office Address]" },
+    { icon: Clock, label: "Hours", value: "Mon – Fri · 9:00 – 17:00" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <Toaster />
+      <section className="bg-navy py-20 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Contact</p>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl sm:text-6xl">
+            Let's start your <span className="text-gold">journey</span>.
+          </h1>
+          <p className="mt-5 max-w-2xl text-white/75">
+            Share a few details and our advisors will reach out personally — within 24 hours.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-5 lg:px-8">
+          <div className="md:col-span-2">
+            <h2 className="font-display text-3xl text-navy">Reach our team</h2>
+            <ul className="mt-8 space-y-6">
+              {details.map(({ icon: Icon, label, value }) => (
+                <li key={label} className="flex gap-4">
+                  <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gold/15 text-navy">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-gold">{label}</div>
+                    <div className="mt-1 text-foreground">{value}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10 rounded-2xl bg-secondary p-6">
+              <p className="font-display text-xl italic text-navy">"By Grace, From Sacrifice to Success."</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-gold">God First. Legacy Always.</p>
+            </div>
+          </div>
+
+          <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-8 shadow-elegant md:col-span-3">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <Field label="Full Name" name="name" required />
+              <Field label="Email" name="email" type="email" required />
+              <Field label="Phone" name="phone" type="tel" />
+              <div>
+                <label className="text-xs font-semibold uppercase tracking-wider text-navy">Service of Interest</label>
+                <select name="service" className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
+                  <option>Study Abroad & Education</option>
+                  <option>Work & Skilled Migration</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+            <div className="mt-5">
+              <label className="text-xs font-semibold uppercase tracking-wider text-navy">How can we help?</label>
+              <textarea name="message" rows={5} required className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
+            </div>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="mt-6 w-full rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-elegant disabled:opacity-60"
+            >
+              {submitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </div>
+  );
+}
+
+function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+  return (
+    <div>
+      <label className="text-xs font-semibold uppercase tracking-wider text-navy">{label}</label>
+      <input
+        name={name}
+        type={type}
+        required={required}
+        className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+      />
+    </div>
+  );
+}
