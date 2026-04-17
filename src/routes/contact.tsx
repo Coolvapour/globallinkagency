@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
@@ -31,10 +31,9 @@ function ContactPage() {
     }, 700);
   }
 
-  const details = [
-    { icon: Phone, label: "Phone", value: "[Phone Number]" },
-    { icon: Mail, label: "Email", value: "[Email Address]" },
-    { icon: MapPin, label: "Office", value: "[Office Address]" },
+  const details: { icon: typeof Phone; label: string; value: string; href?: string }[] = [
+    { icon: Phone, label: "Phone / WhatsApp", value: "+254 722 496 897", href: "tel:+254722496897" },
+    { icon: Mail, label: "Email", value: "glinkagency254@gmail.com", href: "mailto:glinkagency254@gmail.com" },
     { icon: Clock, label: "Hours", value: "Mon – Fri · 9:00 – 17:00" },
   ];
 
@@ -59,14 +58,18 @@ function ContactPage() {
           <div className="md:col-span-2">
             <h2 className="font-display text-3xl text-navy">Reach our team</h2>
             <ul className="mt-8 space-y-6">
-              {details.map(({ icon: Icon, label, value }) => (
+              {details.map(({ icon: Icon, label, value, href }) => (
                 <li key={label} className="flex gap-4">
                   <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gold/15 text-navy">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wider text-gold">{label}</div>
-                    <div className="mt-1 text-foreground">{value}</div>
+                    {href ? (
+                      <a href={href} className="mt-1 block text-foreground hover:text-navy">{value}</a>
+                    ) : (
+                      <div className="mt-1 text-foreground">{value}</div>
+                    )}
                   </div>
                 </li>
               ))}

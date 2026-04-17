@@ -36,9 +36,13 @@ export function SiteFooter() {
               Contact
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>[Phone Number]</li>
-              <li>[Email Address]</li>
-              <li>[Office Address]</li>
+              <li>
+                <a href="tel:+254722496897" className="hover:text-gold">+254 722 496 897</a>
+                <span className="ml-2 text-xs text-gold">(Call / WhatsApp)</span>
+              </li>
+              <li>
+                <a href="mailto:glinkagency254@gmail.com" className="hover:text-gold">glinkagency254@gmail.com</a>
+              </li>
             </ul>
           </div>
         </div>
