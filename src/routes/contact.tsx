@@ -122,12 +122,32 @@ function ContactPage() {
               <label className="text-xs font-semibold uppercase tracking-wider text-navy">How can we help?</label>
               <textarea name="message" rows={5} required className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
             </div>
+
+            <div className="mt-6">
+              <div className="text-xs font-semibold uppercase tracking-wider text-navy">Send via</div>
+              <div className="mt-2 inline-flex rounded-full border border-border bg-background p-1">
+                <button
+                  type="button"
+                  onClick={() => setSendMethod("email")}
+                  className={`rounded-full px-5 py-2 text-sm font-semibold transition-all ${sendMethod === "email" ? "bg-navy text-primary-foreground shadow-elegant" : "text-navy/70 hover:text-navy"}`}
+                >
+                  Email
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSendMethod("whatsapp")}
+                  className={`rounded-full px-5 py-2 text-sm font-semibold transition-all ${sendMethod === "whatsapp" ? "bg-navy text-primary-foreground shadow-elegant" : "text-navy/70 hover:text-navy"}`}
+                >
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+
             <button
               type="submit"
-              disabled={submitting}
-              className="mt-6 w-full rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-elegant disabled:opacity-60"
+              className="mt-6 w-full rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-elegant"
             >
-              {submitting ? "Sending..." : "Send Message"}
+              {sendMethod === "whatsapp" ? "Send via WhatsApp" : "Send via Email"}
             </button>
           </form>
         </div>
