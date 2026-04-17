@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Global Link Migration and Education Agency" },
+      { name: "description", content: "Global Link Migration & Education Agency offers a professional website, brochure, and letterhead to empower African families." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Global Link Migration and Education Agency" },
+      { property: "og:description", content: "Global Link Migration & Education Agency offers a professional website, brochure, and letterhead to empower African families." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Global Link Migration and Education Agency" },
+      { name: "twitter:description", content: "Global Link Migration & Education Agency offers a professional website, brochure, and letterhead to empower African families." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/054905fb-0f73-4ad3-9593-98d0311cc601" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/054905fb-0f73-4ad3-9593-98d0311cc601" },
     ],
     links: [
       {
