@@ -18,17 +18,41 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+type SendMethod = "email" | "whatsapp";
+
+const WHATSAPP_NUMBER = "254722496897";
+const CONTACT_EMAIL = "glinkagency254@gmail.com";
+
 function ContactPage() {
-  const [submitting, setSubmitting] = useState(false);
+  const [sendMethod, setSendMethod] = useState<SendMethod>("email");
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-      toast.success("Thank you! We'll be in touch within 24 hours.");
-    }, 700);
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "");
+    const email = String(data.get("email") || "");
+    const phone = String(data.get("phone") || "");
+    const service = String(data.get("service") || "");
+    const message = String(data.get("message") || "");
+
+    const subject = `Inquiry: ${service} — ${name}`;
+    const body =
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone}\n` +
+      `Service: ${service}\n\n` +
+      `${message}`;
+
+    if (sendMethod === "whatsapp") {
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+      toast.success("Opening WhatsApp...");
+    } else {
+      const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = url;
+      toast.success("Opening your email app...");
+    }
   }
 
   const details: { icon: typeof Phone; label: string; value: string; href?: string }[] = [
