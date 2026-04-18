@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
@@ -59,6 +59,7 @@ function ContactPage() {
     { icon: Phone, label: "Phone / WhatsApp", value: "+254 722 496 897", href: "tel:+254722496897" },
     { icon: Mail, label: "Email", value: "glinkagency254@gmail.com", href: "mailto:glinkagency254@gmail.com" },
     { icon: Clock, label: "Hours", value: "Mon – Fri · 9:00 – 17:00" },
+    { icon: MapPin, label: "Location", value: "Next to Ukerio Motors, Opposite Mediheal Hospital, Along Eldoret-Nakuru Highway, Eldoret" },
   ];
 
   return (
