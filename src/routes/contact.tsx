@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
@@ -59,6 +59,7 @@ function ContactPage() {
     { icon: Phone, label: "Phone / WhatsApp", value: "+254 722 496 897", href: "tel:+254722496897" },
     { icon: Mail, label: "Email", value: "glinkagency254@gmail.com", href: "mailto:glinkagency254@gmail.com" },
     { icon: Clock, label: "Hours", value: "Mon – Fri · 9:00 – 17:00" },
+    { icon: MapPin, label: "Location", value: "Next to Ukerio Motors, Opposite Mediheal Hospital, Along Eldoret-Nakuru Highway, Eldoret" },
   ];
 
   return (
@@ -150,6 +151,27 @@ function ContactPage() {
               {sendMethod === "whatsapp" ? "Send via WhatsApp" : "Send via Email"}
             </button>
           </form>
+        </div>
+      </section>
+
+      <section className="pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl text-navy">Find Us</h2>
+          <p className="mt-2 text-muted-foreground">
+            Visit our office in Eldoret — Next to Ukerio Motors, Opposite Mediheal Hospital, Along Eldoret-Nakuru Highway.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-border shadow-elegant">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.661136312418!2d35.2950739!3d0.5085887000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1781014bc5a4f3ef%3A0x3b098afa180eaa4b!2sPiolite%20Tents%20%26%20Steel%20Design%2C%20Tents%20in%20Eldoret%2C%20Tent%20Makers%20in%20Eldoret%2C%20Tent%20Repairs%20in%20Eldoret%2C%20Camping%20Tents%20In%20Eldoret!5e0!3m2!1sen!2ske!4v1776503165720!5m2!1sen!2ske"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Global Link Migration Office Location"
+            />
+          </div>
         </div>
       </section>
 
