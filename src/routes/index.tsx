@@ -2,6 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import hero from "@/assets/hero.jpg";
+import destCanada from "@/assets/destinations/canada.jpg";
+import destUk from "@/assets/destinations/uk.jpg";
+import destUsa from "@/assets/destinations/usa.jpg";
+import destAustralia from "@/assets/destinations/australia.jpg";
+import destGermany from "@/assets/destinations/germany.jpg";
+import destIreland from "@/assets/destinations/ireland.jpg";
+import destDubai from "@/assets/destinations/dubai.jpg";
+import destMalaysia from "@/assets/destinations/malaysia.jpg";
+import destMalta from "@/assets/destinations/malta.jpg";
+import destQatar from "@/assets/destinations/qatar.jpg";
 import { GraduationCap, Briefcase, Globe2, ShieldCheck, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -157,7 +167,18 @@ function ServicesPreview() {
 }
 
 function Destinations() {
-  const dests = ["Canada", "United Kingdom", "USA", "Australia", "Germany", "Ireland", "Dubai", "Malaysia", "Malta", "Qatar"];
+  const dests = [
+    { name: "Canada", image: destCanada },
+    { name: "United Kingdom", image: destUk },
+    { name: "USA", image: destUsa },
+    { name: "Australia", image: destAustralia },
+    { name: "Germany", image: destGermany },
+    { name: "Ireland", image: destIreland },
+    { name: "Dubai", image: destDubai },
+    { name: "Malaysia", image: destMalaysia },
+    { name: "Malta", image: destMalta },
+    { name: "Qatar", image: destQatar },
+  ];
   return (
     <section className="bg-navy py-20 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -168,12 +189,35 @@ function Destinations() {
             We connect African families to leading destinations across four continents.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {dests.map((d) => (
-            <div key={d} className="rounded-xl border border-white/10 bg-white/5 px-4 py-5 text-center text-sm font-medium transition-colors hover:border-gold hover:text-gold">
-              {d}
-            </div>
+            <Link
+              key={d.name}
+              to="/destinations"
+              className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10 transition-all hover:border-gold hover:shadow-gold"
+            >
+              <img
+                src={d.image}
+                alt={d.name}
+                loading="lazy"
+                width={1024}
+                height={768}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-3 text-center text-sm font-semibold text-white group-hover:text-gold">
+                {d.name}
+              </div>
+            </Link>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            to="/destinations"
+            className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-6 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-navy-deep"
+          >
+            Explore all destinations <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
