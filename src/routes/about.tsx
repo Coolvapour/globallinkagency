@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import about from "@/assets/about.jpg";
-import { Heart, Compass, Award } from "lucide-react";
+import { Heart, Compass, Award, Eye } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -54,11 +54,12 @@ function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Our Foundation</p>
-            <h2 className="mt-3 font-display text-4xl text-navy sm:text-5xl">Mission, Motto & Promise</h2>
+            <h2 className="mt-3 font-display text-4xl text-navy sm:text-5xl">Mission, Vision, Motto & Promise</h2>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Heart, title: "Mission", text: "To turn the sacrifices of African parents into global opportunities for their children, empowering a generation to uplift their families and communities, by God's grace." },
+              { icon: Eye, title: "Vision", text: "To become a leading education and migration agency across Africa." },
               { icon: Compass, title: "Motto", text: "God First. Legacy Always. — every decision rooted in faith; every outcome built to outlast us." },
               { icon: Award, title: "Promise", text: "By Grace, From Sacrifice to Success — relentless service, honest counsel, real results." },
             ].map(({ icon: Icon, title, text }) => (
