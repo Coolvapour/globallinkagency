@@ -41,7 +41,7 @@ export function SiteFooter() {
                 <span className="ml-2 text-xs text-gold">(Call / WhatsApp)</span>
               </li>
               <li>
-                <a href="mailto:glinkagency254@gmail.com" className="hover:text-gold">glinkagency254@gmail.com</a>
+                <a href="mailto:info@globalinkagency.com" className="hover:text-gold">info@globalinkagency.com</a>
               </li>
             </ul>
           </div>
