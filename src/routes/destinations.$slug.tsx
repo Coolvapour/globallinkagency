@@ -56,7 +56,7 @@ export const Route = createFileRoute("/destinations/$slug")({
 });
 
 function DestinationDetail() {
-  const { dest } = Route.useLoaderData();
+  const { dest } = Route.useLoaderData() as { dest: Destination };
   const others = destinations.filter((d) => d.slug !== dest.slug).slice(0, 3);
 
   return (
