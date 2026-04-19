@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowLeft, ArrowRight, GraduationCap, MapPin } from "lucide-react";
 import { destinations, getDestination, type Destination } from "@/data/destinations";
 
-export const Route = createFileRoute("/destinations/$slug")({
+export const Route = createFileRoute("/destinations_/$slug")({
   loader: ({ params }): { dest: Destination } => {
     const dest = getDestination(params.slug);
     if (!dest) throw notFound();

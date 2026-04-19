@@ -15,7 +15,7 @@ import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DestinationsSlugRouteImport } from './routes/destinations.$slug'
+import { Route as DestinationsSlugRouteImport } from './routes/destinations_.$slug'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -48,16 +48,16 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsSlugRoute = DestinationsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => DestinationsRoute,
+  id: '/destinations_/$slug',
+  path: '/destinations/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/destinations': typeof DestinationsRouteWithChildren
+  '/destinations': typeof DestinationsRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/destinations/$slug': typeof DestinationsSlugRoute
@@ -66,7 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/destinations': typeof DestinationsRouteWithChildren
+  '/destinations': typeof DestinationsRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/destinations/$slug': typeof DestinationsSlugRoute
@@ -76,10 +76,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/destinations': typeof DestinationsRouteWithChildren
+  '/destinations': typeof DestinationsRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
-  '/destinations/$slug': typeof DestinationsSlugRoute
+  '/destinations_/$slug': typeof DestinationsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -108,16 +108,17 @@ export interface FileRouteTypes {
     | '/destinations'
     | '/process'
     | '/services'
-    | '/destinations/$slug'
+    | '/destinations_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  DestinationsRoute: typeof DestinationsRouteWithChildren
+  DestinationsRoute: typeof DestinationsRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRoute
+  DestinationsSlugRoute: typeof DestinationsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -164,35 +165,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/destinations/$slug': {
-      id: '/destinations/$slug'
-      path: '/$slug'
+    '/destinations_/$slug': {
+      id: '/destinations_/$slug'
+      path: '/destinations/$slug'
       fullPath: '/destinations/$slug'
       preLoaderRoute: typeof DestinationsSlugRouteImport
-      parentRoute: typeof DestinationsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface DestinationsRouteChildren {
-  DestinationsSlugRoute: typeof DestinationsSlugRoute
-}
-
-const DestinationsRouteChildren: DestinationsRouteChildren = {
-  DestinationsSlugRoute: DestinationsSlugRoute,
-}
-
-const DestinationsRouteWithChildren = DestinationsRoute._addFileChildren(
-  DestinationsRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  DestinationsRoute: DestinationsRouteWithChildren,
+  DestinationsRoute: DestinationsRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRoute,
+  DestinationsSlugRoute: DestinationsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
