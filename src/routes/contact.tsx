@@ -162,7 +162,7 @@ function ContactPage() {
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-border shadow-elegant">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.661136312418!2d35.2950739!3d0.5085887000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1781014bc5a4f3ef%3A0x3b098afa180eaa4b!2sPiolite%20Tents%20%26%20Steel%20Design%2C%20Tents%20in%20Eldoret%2C%20Tent%20Makers%20in%20Eldoret%2C%20Tent%20Repairs%20in%20Eldoret%2C%20Camping%20Tents%20In%20Eldoret!5e0!3m2!1sen!2ske!4v1776503165720!5m2!1sen!2ske"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.8304270176347!2d35.295016747873504!3d0.5086453677941448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17810131b4a63f67%3A0x8bf78f197eb7b865!2sGlobal%20Link%20Migration%20and%20Education%20Agency!5e0!3m2!1sen!2ske!4v1776603716874!5m2!1sen!2ske"
               width="100%"
               height="450"
               style={{ border: 0 }}
