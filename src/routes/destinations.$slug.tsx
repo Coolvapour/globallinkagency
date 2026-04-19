@@ -2,10 +2,10 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowLeft, ArrowRight, GraduationCap, MapPin } from "lucide-react";
-import { destinations, getDestination } from "@/data/destinations";
+import { destinations, getDestination, type Destination } from "@/data/destinations";
 
 export const Route = createFileRoute("/destinations/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { dest: Destination } => {
     const dest = getDestination(params.slug);
     if (!dest) throw notFound();
     return { dest };
