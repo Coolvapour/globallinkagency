@@ -41,6 +41,10 @@ export function SiteFooter() {
                 <span className="ml-2 text-xs text-gold">(Call / WhatsApp)</span>
               </li>
               <li>
+                <a href="tel:+254728444030" className="hover:text-gold">0728 444 030</a>
+                <span className="ml-2 text-xs text-gold">(Secondary line)</span>
+              </li>
+              <li>
                 <a href="mailto:info@globalinkagency.com" className="hover:text-gold">info@globalinkagency.com</a>
               </li>
             </ul>
