@@ -15,7 +15,26 @@ import {
   Luggage,
   Car,
   ArrowRight,
+  FileText,
+  CheckCircle2,
 } from "lucide-react";
+
+const requiredDocuments = [
+  { name: "Valid Passport", note: "Bio-data page, valid 6+ months beyond travel" },
+  { name: "Birth Certificate", note: "Original or certified copy" },
+  { name: "KCSE Certificate / Result Slip", note: "Plus all academic transcripts" },
+  { name: "University / College Transcripts & Certificates", note: "Where applicable" },
+  { name: "Recommendation Letters", note: "Academic and/or employer (2 preferred)" },
+  { name: "Short Courses Certificates", note: "Any additional training or skills" },
+  { name: "Marriage Certificate", note: "Optional — if applicable" },
+  { name: "Police Clearance / Good Conduct", note: "Issued within the last 6 months" },
+  { name: "CV / Résumé", note: "Updated, with employment & education history" },
+  { name: "Statement of Purpose (SOP)", note: "Personal study/career statement" },
+  { name: "Bank Statement", note: "With ID copy, KRA PIN — KES 2.5M to 5M proof of funds" },
+  { name: "IELTS / PTE / TOEFL Results", note: "Minimum 6.5 / 60 / 94 (varies by school)" },
+  { name: "Travel & Health Insurance", note: "Overseas student health cover" },
+  { name: "Identification Documents", note: "National ID, KRA PIN certificate" },
+] as const;
 
 export const Route = createFileRoute("/process")({
   head: () => ({
