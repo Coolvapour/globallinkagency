@@ -22,6 +22,8 @@ type SendMethod = "email" | "whatsapp";
 
 const WHATSAPP_NUMBER = "254722496897";
 const CONTACT_EMAIL = "info@globalinkagency.com";
+const SECONDARY_PHONE_DISPLAY = "0728 444 030";
+const SECONDARY_PHONE_LINK = "+254728444030";
 
 function ContactPage() {
   const [sendMethod, setSendMethod] = useState<SendMethod>("email");
@@ -57,6 +59,7 @@ function ContactPage() {
 
   const details: { icon: typeof Phone; label: string; value: string; href?: string }[] = [
     { icon: Phone, label: "Phone / WhatsApp", value: "+254 722 496 897", href: "tel:+254722496897" },
+    { icon: Phone, label: "Secondary Phone", value: SECONDARY_PHONE_DISPLAY, href: `tel:${SECONDARY_PHONE_LINK}` },
     { icon: Mail, label: "Email", value: "info@globalinkagency.com", href: "mailto:info@globalinkagency.com" },
     { icon: Clock, label: "Hours", value: "Mon – Fri · 9:00 – 17:00" },
     { icon: MapPin, label: "Location", value: "Next to Ukerio Motors, Opposite Mediheal Hospital, Along Eldoret-Nakuru Highway, Eldoret" },
