@@ -232,6 +232,49 @@ function ProcessPage() {
         </div>
       </section>
 
+      {/* Required Documents */}
+      <section className="border-t border-border bg-muted/30 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[360px_1fr]">
+            <div className="lg:sticky lg:top-24 lg:self-start">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold-gradient text-navy-deep shadow-gold">
+                <FileText className="h-6 w-6" />
+              </span>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                Application Checklist
+              </p>
+              <h2 className="mt-3 font-display text-4xl text-navy sm:text-5xl">
+                Required Documents
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                A complete document file makes the difference between a smooth
+                approval and a costly delay. Below is the standard checklist —
+                we'll help you gather, verify and certify every item.
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Specific countries (Australia, Canada, Germany, Malta, etc.) may
+                request additional documents — your advisor will confirm.
+              </p>
+            </div>
+
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {requiredDocuments.map((doc) => (
+                <li
+                  key={doc.name}
+                  className="flex gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-gold hover:shadow-elegant"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-gold" />
+                  <div>
+                    <p className="font-semibold text-navy">{doc.name}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{doc.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="pb-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
