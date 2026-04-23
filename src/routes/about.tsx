@@ -2,15 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import about from "@/assets/about.jpg";
+import graduation from "@/assets/students-graduation.jpg";
+import campus from "@/assets/students-campus.jpg";
+import travel from "@/assets/students-travel.jpg";
 import { Heart, Compass, Award, Eye } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Global Link Migration & Education Agency" },
+      { title: "About Us — Horizon Link Agency" },
       { name: "description", content: "Faith-driven migration and education agency turning African parents' sacrifices into global opportunities for the next generation." },
-      { property: "og:title", content: "About Global Link Migration & Education" },
+      { property: "og:title", content: "About Horizon Link Agency" },
       { property: "og:description", content: "God First. Legacy Always. — Our story, mission and values." },
+      { property: "og:image", content: "/students-graduation.jpg" },
     ],
   }),
   component: AboutPage,
@@ -35,7 +39,7 @@ function AboutPage() {
           <div>
             <h2 className="font-display text-3xl text-navy sm:text-4xl">Our Story</h2>
             <p className="mt-5 text-muted-foreground">
-              Global Link Migration and Education Agency Limited was founded on a simple
+              Horizon Link Agency was founded on a simple
               conviction: every African parent's sacrifice deserves a future worth fighting for.
               We exist to bridge the distance between hard-won dreams and global opportunity —
               guiding students and skilled professionals through study, work, and migration
@@ -46,6 +50,32 @@ function AboutPage() {
               the families we serve. By God's grace, we are turning sacrifices into success
               stories — one family, one passport, one legacy at a time.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Image montage: students at every stage */}
+      <section className="pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
+            <figure className="relative col-span-2 row-span-2 overflow-hidden rounded-2xl shadow-elegant">
+              <img src={graduation} alt="African graduates throwing caps in the air at sunset" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/90 to-transparent p-5 font-display text-xl text-white">
+                Graduation — every sacrifice, redeemed.
+              </figcaption>
+            </figure>
+            <figure className="relative overflow-hidden rounded-2xl shadow-elegant">
+              <img src={campus} alt="Students walking together on a university campus" loading="lazy" width={800} height={600} className="h-full w-full object-cover" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/90 to-transparent p-3 text-sm font-semibold text-white">
+                Campus life
+              </figcaption>
+            </figure>
+            <figure className="relative overflow-hidden rounded-2xl shadow-elegant">
+              <img src={travel} alt="Student waiting at the airport with luggage, ready to travel abroad" loading="lazy" width={800} height={600} className="h-full w-full object-cover" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/90 to-transparent p-3 text-sm font-semibold text-white">
+                Ready to travel
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

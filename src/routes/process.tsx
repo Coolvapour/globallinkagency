@@ -39,7 +39,7 @@ const requiredDocuments = [
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
-      { title: "Our Process — From Zero to Abroad | Global Link" },
+      { title: "Our Process — From Zero to Abroad | Horizon Link Agency" },
       {
         name: "description",
         content:
