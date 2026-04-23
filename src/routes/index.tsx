@@ -38,6 +38,7 @@ function Home() {
       <Hero />
       <Pillars />
       <MissionStrip />
+      <JourneyGallery />
       <ServicesPreview />
       <Destinations />
       <CTA />
