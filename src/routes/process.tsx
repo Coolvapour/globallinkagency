@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import processHero from "@/assets/students-travel.jpg";
+import processConsult from "@/assets/consultation.jpg";
 import {
   Monitor,
   Languages,
@@ -39,7 +41,7 @@ const requiredDocuments = [
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
-      { title: "Our Process — From Zero to Abroad | Global Link" },
+      { title: "Our Process — From Zero to Abroad | Horizon Link Agency" },
       {
         name: "description",
         content:
@@ -158,8 +160,14 @@ function ProcessPage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="bg-navy py-20 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy py-20 text-white">
+        <img
+          src={processHero}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/60" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
             Our Process
           </p>
@@ -171,6 +179,32 @@ function ProcessPage() {
             no shortcuts — just structured, faith-driven guidance from your first
             question to your first day abroad.
           </p>
+        </div>
+      </section>
+
+      {/* Consultation visual band */}
+      <section className="border-b border-border bg-secondary/40 py-14">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+          <img
+            src={processConsult}
+            alt="Horizon Link Agency advisor reviewing visa documents with a student and parent"
+            loading="lazy"
+            width={1600}
+            height={900}
+            className="rounded-2xl object-cover shadow-elegant"
+          />
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Step One — Always
+            </p>
+            <h2 className="mt-3 font-display text-3xl text-navy sm:text-4xl">
+              It begins around our table.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Every successful journey starts with one honest conversation. Bring your
+              dreams, your questions and your documents — we'll bring the roadmap.
+            </p>
+          </div>
         </div>
       </section>
 

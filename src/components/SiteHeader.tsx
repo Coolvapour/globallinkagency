@@ -18,13 +18,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Global Link Migration" className="h-10 w-10 rounded-md" />
+          <img src={logo} alt="Horizon Link Agency" className="h-10 w-10 rounded-md" />
           <div className="leading-tight">
             <div className="font-display text-base font-semibold text-navy sm:text-lg">
-              Global Link
+              Horizon Link
             </div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-gold">
-              Migration & Education
+              Agency · Migration & Education
             </div>
           </div>
         </Link>

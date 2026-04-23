@@ -10,9 +10,9 @@ export function SiteFooter() {
             <div className="flex items-center gap-3">
               <img src={logo} alt="Logo" className="h-12 w-12 rounded-md" />
               <div>
-                <div className="font-display text-xl">Global Link Migration</div>
+                <div className="font-display text-xl">Horizon Link Agency</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-gold">
-                  & Education Agency Limited
+                  Migration & Education
                 </div>
               </div>
             </div>
@@ -45,13 +45,13 @@ export function SiteFooter() {
                 <span className="ml-2 text-xs text-gold">(Secondary line)</span>
               </li>
               <li>
-                <a href="mailto:info@globalinkagency.com" className="hover:text-gold">info@globalinkagency.com</a>
+                <a href="mailto:info@horizonlinkagency.com" className="hover:text-gold">info@horizonlinkagency.com</a>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} Global Link Migration and Education Agency Limited. All rights reserved.
+          © {new Date().getFullYear()} Horizon Link Agency. All rights reserved.
         </div>
       </div>
     </footer>

@@ -7,7 +7,7 @@ import { destinations } from "@/data/destinations";
 export const Route = createFileRoute("/destinations")({
   head: () => ({
     meta: [
-      { title: "Study Destinations — Global Link Migration & Education" },
+      { title: "Study Destinations — Horizon Link Agency" },
       {
         name: "description",
         content:

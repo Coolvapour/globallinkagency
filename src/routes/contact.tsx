@@ -9,9 +9,9 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Global Link Migration & Education Agency" },
+      { title: "Contact Us — Horizon Link Agency" },
       { name: "description", content: "Book a free consultation with our migration and education advisors. We're here to guide your family from sacrifice to success." },
-      { property: "og:title", content: "Contact Global Link Migration & Education" },
+      { property: "og:title", content: "Contact Horizon Link Agency" },
       { property: "og:description", content: "Reach our team and start your global journey today." },
     ],
   }),
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/contact")({
 type SendMethod = "email" | "whatsapp";
 
 const WHATSAPP_NUMBER = "254722496897";
-const CONTACT_EMAIL = "info@globalinkagency.com";
+const CONTACT_EMAIL = "info@horizonlinkagency.com";
 const SECONDARY_PHONE_DISPLAY = "0728 444 030";
 const SECONDARY_PHONE_LINK = "+254728444030";
 
@@ -60,7 +60,7 @@ function ContactPage() {
   const details: { icon: typeof Phone; label: string; value: string; href?: string }[] = [
     { icon: Phone, label: "Phone / WhatsApp", value: "+254 722 496 897", href: "tel:+254722496897" },
     { icon: Phone, label: "Secondary Phone", value: SECONDARY_PHONE_DISPLAY, href: `tel:${SECONDARY_PHONE_LINK}` },
-    { icon: Mail, label: "Email", value: "info@globalinkagency.com", href: "mailto:info@globalinkagency.com" },
+    { icon: Mail, label: "Email", value: "info@horizonlinkagency.com", href: "mailto:info@horizonlinkagency.com" },
     { icon: Clock, label: "Hours", value: "Mon – Fri · 9:00 – 17:00" },
     { icon: MapPin, label: "Location", value: "Next to Ukerio Motors, Opposite Mediheal Hospital, Along Eldoret-Nakuru Highway, Eldoret" },
   ];
@@ -172,7 +172,7 @@ function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Global Link Migration Office Location"
+              title="Horizon Link Agency Office Location"
             />
           </div>
         </div>

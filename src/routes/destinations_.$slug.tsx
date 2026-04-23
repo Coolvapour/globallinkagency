@@ -12,10 +12,10 @@ export const Route = createFileRoute("/destinations_/$slug")({
   },
   head: ({ loaderData }) => {
     const d = loaderData?.dest;
-    if (!d) return { meta: [{ title: "Destination — Global Link" }] };
+    if (!d) return { meta: [{ title: "Destination — Horizon Link Agency" }] };
     return {
       meta: [
-        { title: `Study in ${d.name} — Top Universities | Global Link` },
+        { title: `Study in ${d.name} — Top Universities | Horizon Link Agency` },
         {
           name: "description",
           content: `Explore reputable universities in ${d.name} for international students across engineering, business, IT, medicine and more.`,
