@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import processHero from "@/assets/students-travel.jpg";
+import processConsult from "@/assets/consultation.jpg";
 import {
   Monitor,
   Languages,
