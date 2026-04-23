@@ -12,15 +12,20 @@ import destDubai from "@/assets/destinations/dubai.jpg";
 import destMalaysia from "@/assets/destinations/malaysia.jpg";
 import destMalta from "@/assets/destinations/malta.jpg";
 import destQatar from "@/assets/destinations/qatar.jpg";
-import { GraduationCap, Briefcase, Globe2, ShieldCheck, ArrowRight } from "lucide-react";
+import studentsGraduation from "@/assets/students-graduation.jpg";
+import studentsTravel from "@/assets/students-travel.jpg";
+import studentsCampus from "@/assets/students-campus.jpg";
+import consultation from "@/assets/consultation.jpg";
+import { GraduationCap, Briefcase, Globe2, ShieldCheck, ArrowRight, Plane } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Global Link Migration & Education Agency — By Grace, From Sacrifice to Success" },
+      { title: "Horizon Link Agency — By Grace, From Sacrifice to Success" },
       { name: "description", content: "Trusted study abroad and skilled migration agency empowering African families to access global opportunities. God First. Legacy Always." },
-      { property: "og:title", content: "Global Link Migration & Education Agency" },
+      { property: "og:title", content: "Horizon Link Agency — Migration & Education" },
       { property: "og:description", content: "From Sacrifice to Success — global study and migration pathways for African families." },
+      { property: "og:image", content: "/students-graduation.jpg" },
     ],
   }),
   component: Home,
