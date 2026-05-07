@@ -16,7 +16,7 @@ import studentsGraduation from "@/assets/students-graduation.jpg";
 import studentsTravel from "@/assets/students-travel.jpg";
 import studentsCampus from "@/assets/students-campus.jpg";
 import consultation from "@/assets/consultation.jpg";
-import { GraduationCap, Briefcase, Globe2, ShieldCheck, ArrowRight, Plane, BookOpen, Wrench, Home as HomeIcon, Users, Quote, Clock, HeartHandshake, BadgeCheck, HeadphonesIcon } from "lucide-react";
+import { GraduationCap, Briefcase, Globe2, ShieldCheck, ArrowRight, Plane, BookOpen, Wrench, Home as HomeIcon, Users, Quote, Clock, HeartHandshake, BadgeCheck, Headphones } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
